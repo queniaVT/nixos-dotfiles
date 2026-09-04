@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
 	"layer": "top", // Waybar at top layer
-	"output": ["DP-2"],
+	"output": ["LVDS-1"],
 	"on-sigusr1": "hide",
 	"on-sigusr2": "show",
     // "position": "bottom", // Waybar position (top|bottom|left|right)

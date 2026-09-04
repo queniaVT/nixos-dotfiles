@@ -17,6 +17,10 @@ let
 		niri validate --config config.kdl
 		cp config.kdl $out
 	'';
+	waybarConfigs = {
+		gayming-station = ./waybar/hosts/gayming-station;
+		laptop = ./waybar/hosts/laptop;
+	};
 in
 {
 	home = {
@@ -177,7 +181,8 @@ in
 	};
 	xdg.configFile = {
 		"niri/config.kdl".source = checkedNiriConfig;
-		"waybar".source = ./waybar;
+		"waybar/config".source = waybarConfigs.${hostName};
+		"waybar/style.css".source = ./waybar/style.css;
 	};
 	home.file = {
 		".config/niri/random-wallpaper.sh" = {
