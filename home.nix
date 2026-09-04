@@ -183,6 +183,7 @@ in
 		"niri/config.kdl".source = checkedNiriConfig;
 		"waybar/config".source = waybarConfigs.${hostName};
 		"waybar/style.css".source = ./waybar/style.css;
+		"fuzzel/fuzzel.ini".source = ./fuzzel/fuzzel.ini;
 	};
 	home.file = {
 		".config/niri/random-wallpaper.sh" = {
