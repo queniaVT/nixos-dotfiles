@@ -1,0 +1,22 @@
+* {
+    font-family: "monospace";
+    color: #ffffff;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#clock {
+    background: transparent;
+    padding: 0 10px;
+    border-radius: 5px;
+}
+
+#network, #cpu, #memory, #temperature, #battery, .custom_gpu { 
+    background: transparent;
+    padding: 0 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+

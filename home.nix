@@ -177,6 +177,7 @@ in
 	};
 	xdg.configFile = {
 		"niri/config.kdl".source = checkedNiriConfig;
+		"waybar".source = ./waybar;
 	};
 	home.file = {
 		".config/niri/random-wallpaper.sh" = {
