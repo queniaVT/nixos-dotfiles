@@ -11,6 +11,9 @@
 			efi.canTouchEfiVariables = true;
 		};
 	};
+	home-manager.extraSpecialArgs = {
+		hostName = "gayming-station";
+	};
 	users.extraGroups.vboxusers.members = ["quenia"];
 	virtualisation.virtualbox.host.enable = true;
 }

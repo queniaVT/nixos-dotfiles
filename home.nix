@@ -1,4 +1,23 @@
-{config, pkgs, inputs, ...}:
+{config, pkgs, inputs, hostName, ...}:
+let
+	hostConfigs = {
+		gayming-station = ./niri/hosts/gayming-station.kdl;
+		laptop = ./niri/hosts/laptop.kdl;
+	};
+	hostConfig = hostConfigs.${hostName};
+	checkedNiriConfig = pkgs.runCommand "niri-config-${hostName}"
+	{
+		nativeBuildInputs = [ pkgs.niri ];
+	}
+	''
+		cat \
+		${./niri/common.kdl} \
+		${hostConfig} \
+		> config.kdl
+		niri validate --config config.kdl
+		cp config.kdl $out
+	'';
+in
 {
 	home = {
 		username = "quenia";
@@ -154,6 +173,31 @@
 		font = {
 			name = "Sans";
 			size = 11;
+		};
+	};
+	xdg.configFile = {
+		"niri/config.kdl".source = checkedNiriConfig;
+	};
+	home.file = {
+		".config/niri/random-wallpaper.sh" = {
+			source = ./niri/scripts/random-wallpaper.sh;
+			executable = true;
+		};
+		".config/niri/reboot.sh" = {
+			source = ./niri/scripts/reboot.sh;
+			executable = true;
+		};
+		".config/niri/shutdown.sh" = {
+			source = ./niri/scripts/shutdown.sh;
+			executable = true;
+		};
+		".config/niri/special-toggle.sh" = {
+			source = ./niri/scripts/special-toggle.sh;
+			executable = true;
+		};
+		".config/niri/start-strawberry.sh" = {
+			source = ./niri/scripts/start-strawberry.sh;
+			executable = true;
 		};
 	};
 }

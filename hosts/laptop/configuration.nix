@@ -12,5 +12,8 @@
 			device = "/dev/sda";
 		};
 	};
+	home-manager.extraSpecialArgs = {
+		hostName = "laptop";
+	};
 	services.libinput.enable = true;
 }

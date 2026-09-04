@@ -1,0 +1,89 @@
+output "DP-3" {
+	mode "1920x1080@60"
+	position x=0 y=0
+	scale 1
+}
+output "DP-2" {
+	mode "1920x1080@60"
+	position x=1920 y=0
+	scale 1
+}
+spawn-at-startup "kitty"
+spawn-at-startup "dolphin"
+spawn-at-startup "zen-beta"
+spawn-at-startup "nicotine-plus"
+spawn-at-startup "fluxer-canary"
+spawn-at-startup "discord"
+spawn-at-startup "steam"
+spawn-at-startup ".config/niri/start-strawberry.sh"
+spawn-at-startup "/mnt/data/documents/apps/mp/musicpresence-2.3.5-linux-x86_64.AppImage"
+workspace "1a" {
+	open-on-output "DP-3"
+}    
+workspace "2a" {
+	open-on-output "DP-3"
+}    
+workspace "1b" {
+	open-on-output "DP-2"
+}    
+workspace "2b" {
+	open-on-output "DP-2"
+}  
+workspace "3"
+workspace "4"
+workspace "5"
+workspace "6"
+workspace "7"
+workspace "8"
+workspace "9"
+workspace "10"
+workspace "special"
+window-rule {
+	match at-startup=true app-id="fluxer-canary"
+	open-maximized true
+	open-on-output "DP-2"
+	open-on-workspace "1b"
+	open-focused false
+}
+window-rule {
+	match at-startup=true app-id="discord"
+	open-maximized true
+	open-on-output "DP-2"
+	open-on-workspace "2b"
+	open-focused false
+}
+window-rule {
+	match at-startup=true app-id="steam"
+	open-maximized true
+	open-on-workspace "1a"
+}
+window-rule {
+	match at-startup=true app-id=r#"^kitty"#
+	open-maximized true
+	open-on-workspace "2a"
+	open-focused false
+}
+window-rule {
+	match at-startup=true app-id="org.strawberrymusicplayer.strawberry"
+	open-maximized true
+	open-on-workspace "3"
+	open-focused false
+}
+window-rule {
+	match at-startup=true app-id="org.nicotine_plus.Nicotine"
+	open-maximized true
+	open-on-workspace "4"
+	open-focused false
+}
+window-rule {
+	match at-startup=true app-id="org.kde.dolphin"
+	open-maximized true
+	open-on-workspace "4"
+	open-focused false
+}
+window-rule {
+	match at-startup=true app-id=r#"^zen"#
+	open-maximized true
+	open-on-workspace "special"
+	open-focused false
+}
