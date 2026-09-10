@@ -16,6 +16,7 @@ spawn-at-startup "fluxer-canary"
 spawn-at-startup "discord"
 spawn-at-startup "steam"
 spawn-at-startup ".config/niri/start-strawberry.sh"
+spawn-sh-at-startup ".config/niri/set-wallpaper.sh"
 spawn-at-startup "/mnt/data/documents/apps/mp/musicpresence-2.3.5-linux-x86_64.AppImage"
 workspace "1a" {
 	open-on-output "DP-3"

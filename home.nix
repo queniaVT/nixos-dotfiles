@@ -65,6 +65,8 @@ in
 			wget
 			# dev stuffz
 			gcc
+			dotnet-sdk
+			omnisharp-roslyn
 			nodejs_22
 			rustc
 			cargo
@@ -107,6 +109,7 @@ in
 			enable = true;
 			shellAliases = {
 				nrs = ''sudo nixos-rebuild switch --flake "$HOME/nixos-dotfiles#$(hostname)"'';
+				nfu = "cd $HOME/nixos-dotfiles; sudo nix flake update";
 			};
 			profileExtra = ''
 			'';
@@ -114,47 +117,12 @@ in
 				hyfetch
 			'';
 		};
-		vim = {
+		neovim = {
 			enable = true;
-			extraConfig = ''
-				set nocompatible
-				filetype on
-				syntax on
-				set number
-				set cursorline
-				set cursorcolumn
-				set shiftwidth=4
-				set tabstop=4
-				set softtabstop=0 noexpandtab
-				set nowrap
-				set incsearch
-				set ignorecase
-				set showmode
-				set showmatch
-				set hlsearch
-				set wildmenu
-				set wildmode=list:longest
-				set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-				set statusline=
-				set statusline+=\ %F\ %M\ %Y\ %R
-				set statusline+=%=
-				set statusline+=\ row:\ %l\ col:\ %c\ percent:\ %p%%
-				set laststatus=2
-				if has("autocmd")
-					au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-						\| exe "normal! g'\"" | endif
-				endif
-				set list
-				set listchars=tab:>-
-				augroup DisableNixFtplugin
-					autocmd!
-					autocmd FileType nix let b:did_ftplugin = 1
-					autocmd FileType rust let b:did_ftplugin = 1
-				augroup END
-				hi SpecialKey ctermfg=DarkGrey ctermbg=NONE
-				hi LineNr ctermfg=darkgreen guifg=darkgreen
-				hi CursorLineNr ctermfg=green guifg=green
-				'';
+			defaultEditor = true;
+			initLua = builtins.readFile ./neovim/init.lua;
+			viAlias = true;
+			vimAlias = true;
 		};
 	};
 	# catpussy thing
