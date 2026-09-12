@@ -154,8 +154,8 @@ in
 		"fuzzel/fuzzel.ini".source = ./fuzzel/fuzzel.ini;
 	};
 	home.file = {
-		".config/niri/random-wallpaper.sh" = {
-			source = ./niri/scripts/random-wallpaper.sh;
+		".config/niri/set-wallpaper.sh" = {
+			source = ./niri/scripts/set-wallpaper.sh;
 			executable = true;
 		};
 		".config/niri/reboot.sh" = {
