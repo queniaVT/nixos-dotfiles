@@ -55,6 +55,7 @@ window-rule {
 window-rule {
 	match at-startup=true app-id="steam"
 	open-maximized true
+	open-fullscreen false
 	open-on-workspace "1a"
 }
 window-rule {
