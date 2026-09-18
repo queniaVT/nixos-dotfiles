@@ -147,6 +147,11 @@
 	nixpkgs.config.allowUnfree = true;
 	time.timeZone = "Europe/Prague";
 	nix.settings.experimental-features = ["nix-command" "flakes"];
-	systemd.user.services.niri.enableDefaultPath = false;
+	systemd = {
+		user.services.niri.enableDefaultPath = false;
+		tmpfiles.rules = [
+			"d /home/quenia/cloud 0755 quenia users -"
+		];
+	};
 	system.stateVersion = "26.05";
 }
