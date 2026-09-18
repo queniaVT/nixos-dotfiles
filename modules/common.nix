@@ -125,7 +125,25 @@
 			};
 		};
 	};
-	environment.variables.QT_QPA_PLATFORMTHEME = "qt6ct";
+	fileSystems."/home/quenia/cloud" = {
+		device = "kitteh@servurr:/home/kitteh/cloud";
+		fsType = "sshfs";
+		options = [
+			"reconnect"
+			"cache=yes"
+			"ServerAliveInterval=15"
+			"ServerAliveCountMax=3"
+			"noauto"
+			"x-systemd.automount"
+			"IdentityFile=/home/quenia/.ssh/id_ed25519" 
+			"StrictHostKeyChecking=no"
+			"allow_other"
+		];
+	};
+	environment = {
+		etc."fuse.conf".text = ''user_allow_other'';
+		variables.QT_QPA_PLATFORMTHEME = "qt6ct";
+	};
 	nixpkgs.config.allowUnfree = true;
 	time.timeZone = "Europe/Prague";
 	nix.settings.experimental-features = ["nix-command" "flakes"];

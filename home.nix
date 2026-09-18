@@ -84,6 +84,7 @@ in
 			wine
 			winetricks
 			appimage-run
+			sshfs
 		];
 		pointerCursor = {
 			enable = true;
