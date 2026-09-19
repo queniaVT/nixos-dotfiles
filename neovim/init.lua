@@ -37,12 +37,52 @@ autocmd("BufReadPost", {
 	end,
 })
 
-local ft_group = vim.api.nvim_create_augroup("DisableNixFtplugin", { clear = true })
-autocmd("FileType", {
-	pattern = { "nix", "rust" },
-	group = ft_group,
-	callback = function()
-		vim.b.did_ftplugin = 1
-	end,
+vim.lsp.config("lua_ls", {
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+			},
+			diagnostics = {
+				globals = {
+					"vim",
+				},
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+				checkThirdParty = false,
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+})
+
+vim.lsp.enable("nil_ls")
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("clangd")
+vim.lsp.enable("html")
+vim.lsp.enable("cssls")
+vim.lsp.enable("ts_ls")
+vim.lsp.enable("csharp_ls")
+
+require("blink.cmp").setup({
+	keymap = {
+		preset = "default",
+	},
+	completion = {
+		documentation = {
+			auto_show = true,
+		},
+	},
+	sources = {
+		default = {
+			"lsp",
+			"path",
+			"buffer",
+		},
+	},
 })
 

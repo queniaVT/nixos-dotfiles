@@ -70,6 +70,12 @@ in
 			nodejs_22
 			rustc
 			cargo
+			nil # nix lsp
+			lua-language-server # lua lsp
+			rust-analyzer # rust lsp
+			vscode-langservers-extracted # html/css lsp
+			csharp-ls # c# lsp
+			typescript-language-server # js/ts lsp
 			# files stuffz
 			tree
 			zip
@@ -121,6 +127,11 @@ in
 		neovim = {
 			enable = true;
 			defaultEditor = true;
+			plugins = with pkgs.vimPlugins; [
+				nvim-lspconfig
+				blink-cmp
+				friendly-snippets
+			];
 			initLua = builtins.readFile ./neovim/init.lua;
 			viAlias = true;
 			vimAlias = true;
