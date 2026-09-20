@@ -64,6 +64,7 @@ in
 			jq
 			wget
 			# dev stuffz
+			godot_4_7
 			gcc
 			dotnet-sdk
 			omnisharp-roslyn
