@@ -64,9 +64,9 @@ in
 			jq
 			wget
 			# dev stuffz
-			godot_4_7
+			godot_4_7-mono
 			gcc
-			dotnet-sdk
+			dotnet-sdk_10
 			omnisharp-roslyn
 			nodejs_22
 			rustc
