@@ -118,6 +118,9 @@ in
 			shellAliases = {
 				nrs = ''sudo nixos-rebuild switch --flake "$HOME/nixos-dotfiles#$(hostname)"'';
 				nfu = "cd $HOME/nixos-dotfiles; sudo nix flake update";
+				cls = "clear; hyfetch";
+				cdd = "cd ..";
+				cssh = "ssh kitteh@servurr";
 			};
 			profileExtra = ''
 			'';
