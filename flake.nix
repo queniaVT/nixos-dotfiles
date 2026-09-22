@@ -9,9 +9,11 @@
 			inputs.nixpkgs.follows = "nixpkgs";};
 		aagl = {url = "github:ezKEa/aagl-gtk-on-nix";
 			inputs.nixpkgs.follows = "nixpkgs";};
+		prismlauncher-cracked = {url = "github:diegiwg/PrismLauncher-Cracked";
+			inputs.nixpkgs.follows = "nixpkgs";};
 		home-manager = {url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";};};
-	outputs = {self, nixpkgs, catppuccin, zen-browser, fluxer, aagl, home-manager, ...}@inputs:
+	outputs = {self, nixpkgs, catppuccin, zen-browser, fluxer, aagl, prismlauncher-cracked, home-manager, ...}@inputs:
 		let
 			system = "x86_64-linux";
 			commonModules = [

@@ -119,6 +119,22 @@
         "type": "github"
       }
     },
+    "libnbtplusplus": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1772016279,
+        "narHash": "sha256-7itkptyjoRcXfGLwg1/jxajetZ3a4mDc66+w4X6yW8s=",
+        "owner": "PrismLauncher",
+        "repo": "libnbtplusplus",
+        "rev": "687e43031df0dc641984b4256bcca50d5b3f7de3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "PrismLauncher",
+        "repo": "libnbtplusplus",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1789286504,
@@ -135,6 +151,27 @@
         "type": "github"
       }
     },
+    "prismlauncher-cracked": {
+      "inputs": {
+        "libnbtplusplus": "libnbtplusplus",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1784295107,
+        "narHash": "sha256-d6En6xP3XWvVj0/QlgGad6zxjWknVxTttVk+G7HLFBQ=",
+        "owner": "diegiwg",
+        "repo": "PrismLauncher-Cracked",
+        "rev": "d393323fdc52ef645c48a04ca73aff2bbe24ffc9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "diegiwg",
+        "repo": "PrismLauncher-Cracked",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "aagl": "aagl",
@@ -142,6 +179,7 @@
         "fluxer": "fluxer",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "prismlauncher-cracked": "prismlauncher-cracked",
         "zen-browser": "zen-browser"
       }
     },
