@@ -76,6 +76,7 @@ in
 			jq
 			wget
 			# dev stuffz
+			arduino-ide
 			godot_4_7-mono
 			gcc
 			dotnet-sdk_10
