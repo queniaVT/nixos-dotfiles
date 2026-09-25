@@ -195,10 +195,6 @@ in
 			source = ./niri/scripts/shutdown.sh;
 			executable = true;
 		};
-		".config/niri/special-toggle.sh" = {
-			source = ./niri/scripts/special-toggle.sh;
-			executable = true;
-		};
 		".config/niri/start-strawberry.sh" = {
 			source = ./niri/scripts/start-strawberry.sh;
 			executable = true;
