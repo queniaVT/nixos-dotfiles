@@ -142,7 +142,10 @@
 	};
 	environment = {
 		etc."fuse.conf".text = ''user_allow_other'';
-		variables.QT_QPA_PLATFORMTHEME = "qt6ct";
+		variables = {
+			QT_QPA_PLATFORMTHEME = "qt6ct";
+			FONTCONFIG_FILE = "/etc/fonts/fonts.conf";
+		};
 	};
 	nixpkgs.config.allowUnfree = true;
 	time.timeZone = "Europe/Prague";
