@@ -140,6 +140,14 @@ in
 			bashrcExtra = ''
 				hyfetch
 			'';
+			initExtra = ''
+				cd() {
+					builtin cd "$@" || return
+					if git rev-parse --is-inside-work-tree &>/dev/null; then
+						git status
+					fi
+				}
+			'';
 		};
 		neovim = {
 			enable = true;
