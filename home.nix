@@ -143,7 +143,9 @@ in
 			initExtra = ''
 				cd() {
 					builtin cd "$@" || return
-					if git rev-parse --is-inside-work-tree &>/dev/null; then
+					local repo_root
+					repo_root="$(git rev-parse --show-toplevel 2>/dev/null)"
+					if [[ -n "$repo_root" && "$(realpath "$PWD")" == "$(realpath "$repo_root")" ]]; then
 						git status
 					fi
 				}
