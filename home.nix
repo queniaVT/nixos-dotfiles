@@ -76,10 +76,13 @@ in
 			jq
 			wget
 			# dev stuffz
+			nix-direnv
+			direnv
 			arduino-ide
 			godot_4_7-mono
 			gcc
 			dotnet-sdk_10
+			jdk25
 			omnisharp-roslyn
 			nodejs_22
 			rustc
@@ -148,6 +151,7 @@ in
 					if [[ -n "$repo_root" && "$(realpath "$PWD")" == "$(realpath "$repo_root")" ]]; then
 						git status
 					fi
+					ls
 				}
 			'';
 		};
