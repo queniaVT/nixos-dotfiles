@@ -22,6 +22,17 @@ vim.opt.laststatus = 2
 vim.opt.list = true
 vim.opt.listchars = { tab = '>-' }
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "*",
+    callback = function()
+        vim.opt_local.expandtab = false
+        vim.opt_local.tabstop = 4
+        vim.opt_local.shiftwidth = 4
+        vim.opt_local.softtabstop = 4
+    end,
+})
+vim.cmd("filetype plugin indent on")
+
 local autocmd = vim.api.nvim_create_autocmd
 autocmd("BufReadPost", {
 	callback = function()

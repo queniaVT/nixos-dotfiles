@@ -142,6 +142,7 @@ in
 			'';
 			bashrcExtra = ''
 				hyfetch
+				eval "$(direnv hook bash)"
 			'';
 			initExtra = ''
 				cd() {
