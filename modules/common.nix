@@ -149,7 +149,16 @@
 	};
 	nixpkgs.config.allowUnfree = true;
 	time.timeZone = "Europe/Prague";
-	nix.settings.experimental-features = ["nix-command" "flakes"];
+	nix = {
+		settings.experimental-features = ["nix-command" "flakes"];
+		optimise.automatic = true;
+		gc = {
+			automatic = true;
+			dates = "daily";
+			persistent = true;
+			options = "--delete-older-than 14d";
+		};
+	};
 	systemd = {
 		user.services.niri.enableDefaultPath = false;
 		tmpfiles.rules = [
