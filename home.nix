@@ -55,6 +55,7 @@ in
 			pavucontrol
 			libreoffice
 			# kde stuffz
+			kdePackages.kdenlive
 			kdePackages.dolphin
 			kdePackages.filelight
 			kdePackages.okular
