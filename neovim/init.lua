@@ -75,6 +75,18 @@ vim.lsp.config("gdscript", {
 	filetypes = { "gdscript", "gd" },
 })
 
+vim.lsp.config("nil_ls", {
+	settings = {
+		["nil"] = {
+			nix = {
+				flake = {
+					autoArchive = true,
+				},
+			},
+		},
+	},
+})
+
 vim.lsp.enable("gdscript")
 vim.lsp.enable("nil_ls")
 vim.lsp.enable("lua_ls")
