@@ -113,7 +113,7 @@
 		openssh.authorizedKeys.keys = [
 			"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG6w7VubW0B4SLF2DGCqOeJU3X/6zCpXBYvFraisjyQc queniaVT@proton.me" # dprk-gov-surveillance-device
 		];
-		extraGroups = ["wheel"];
+		extraGroups = ["wheel" "dialout"];
 	};
 	home-manager.users.quenia = {
 		dconf.settings = {
@@ -125,23 +125,7 @@
 			};
 		};
 	};
-	fileSystems."/home/quenia/cloud" = {
-		device = "kitteh@servurr:/home/kitteh/cloud";
-		fsType = "sshfs";
-		options = [
-			"reconnect"
-			"cache=yes"
-			"ServerAliveInterval=15"
-			"ServerAliveCountMax=3"
-			"noauto"
-			"x-systemd.automount"
-			"IdentityFile=/home/quenia/.ssh/id_ed25519" 
-			"StrictHostKeyChecking=no"
-			"allow_other"
-		];
-	};
 	environment = {
-		etc."fuse.conf".text = ''user_allow_other'';
 		variables = {
 			QT_QPA_PLATFORMTHEME = "qt6ct";
 			FONTCONFIG_FILE = "/etc/fonts/fonts.conf";
@@ -161,9 +145,6 @@
 	};
 	systemd = {
 		user.services.niri.enableDefaultPath = false;
-		tmpfiles.rules = [
-			"d /home/quenia/cloud 0755 quenia users -"
-		];
 	};
 	system.stateVersion = "26.05";
 }
