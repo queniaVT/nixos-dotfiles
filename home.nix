@@ -54,6 +54,7 @@ in
 			inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 			pavucontrol
 			libreoffice
+			cisco-packet-tracer_9
 			# kde stuffz
 			kdePackages.kdenlive
 			kdePackages.dolphin
