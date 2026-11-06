@@ -36,7 +36,7 @@ workspace "2b" {
 workspace "3"
 workspace "4"
 window-rule {
-	match at-startup=true app-id="app.fluxer.FluxerDesktopCanary"
+	match app-id="app.fluxer.FluxerDesktopCanary"
 	open-maximized true
 	open-on-output "DP-2"
 	open-on-workspace "1b"

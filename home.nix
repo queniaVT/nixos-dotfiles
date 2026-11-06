@@ -97,6 +97,7 @@ in
 			typescript-language-server # js/ts lsp
 			# files stuffz
 			tree
+			unrar-free
 			zip
 			unzip
 			flac
